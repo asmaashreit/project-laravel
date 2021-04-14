@@ -22,4 +22,11 @@ class registController extends Controller
         ]);
         echo 'Successful Send Data';
     }
+
+    public function display(){
+        
+        $data = student::paginate(15);    
+        return view('display',['StudentData' => $data]);
+    
+    }
 }
